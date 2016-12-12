@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cooking App</title>
+	<link rel="stylesheet" type="text/css" href="styles/myStyles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.js"></script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="recipeCtrl">
+	<form ng-submit="loadRecipe()">
+		<input type="text" id="recipeSearch" placeholder="Search for a recipe. . .">
+		<input type="submit" id="searchButton" value="Search">
+	</form>
+	<table>
+		<tr ng-repeat="x in recipes">
+			<td>{{ x.recipe.label }}</td>
+			<td>{{ x.recipe.yield }}</td>		
+		</tr>
+	</table>
+	
+</div>
+
+<script src="scripts/myScripts.js"></script>
+</body>
+</html>
